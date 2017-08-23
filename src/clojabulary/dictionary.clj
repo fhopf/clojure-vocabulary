@@ -3,7 +3,7 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
-(def dictionary(atom {}))
+(def dictionary(atom {"makan" "to eat" "makanan" "food" "minum" "to drink" "minuman" "drink"}))
 
 (defn add_word[word] (swap! dictionary conj word))
 

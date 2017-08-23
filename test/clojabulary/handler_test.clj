@@ -3,11 +3,12 @@
             [ring.mock.request :as mock]
             [clojabulary.handler :refer :all]))
 
+
 (deftest test-app
   (testing "listing"
     (let [response (app (mock/request :get "/"))]
       (is (= (:status response) 200))
-      (quote (is (= (:body response) "Hello World")))))
+      (is (.contains (:body response) "<title>Clojabulary</title>"))))
 
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
