@@ -1,4 +1,4 @@
-(ns clojabulary-lein.templating
+(ns clojabulary.templating
   (:use [hiccup.page :only (html5 include-css include-js)]))
 
 (defn body [title & content]

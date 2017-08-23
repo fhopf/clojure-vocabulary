@@ -1,6 +1,6 @@
-(ns clojabulary-lein.dictionary-test
+(ns clojabulary.dictionary-test
   (:require [clojure.test :refer :all]
-            [clojabulary-lein.dictionary :refer :all]))
+            [clojabulary.dictionary :refer :all]))
 
 (deftest test-dictionary
   (testing "can add word"

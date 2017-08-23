@@ -1,6 +1,6 @@
-# clojabulary-lein
+# Clojabulary
 
-FIXME
+A simple vocabulary manager
 
 ## Prerequisites
 
@@ -16,4 +16,6 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2017 FIXME
+Apache License v2.0
+
+Copyright © 2017 Florian Hopf

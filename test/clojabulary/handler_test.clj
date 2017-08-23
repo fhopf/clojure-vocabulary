@@ -1,13 +1,13 @@
-(ns clojabulary-lein.handler-test
+(ns clojabulary.handler-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [clojabulary-lein.handler :refer :all]))
+            [clojabulary.handler :refer :all]))
 
 (deftest test-app
-  (testing "main route"
+  (testing "listing"
     (let [response (app (mock/request :get "/"))]
       (is (= (:status response) 200))
-      (is (= (:body response) "Hello World"))))
+      (quote (is (= (:body response) "Hello World")))))
 
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
