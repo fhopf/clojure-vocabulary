@@ -11,4 +11,4 @@
 
 (defn words[] (@dictionary))
                        
-(defn find_word[word](get @dictionary word))
+(defn find_word[word]{word (get @dictionary word)})

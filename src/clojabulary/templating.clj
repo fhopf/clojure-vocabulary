@@ -13,9 +13,15 @@
        
     [:body
      [:div {:class "container"}
-      [:h1 title]
+      [:a {:href "/"} [:h1 title]]
       [:div {:class "row"}
-       [:div {:class "col-md-4"} [:h2 "Find"] [:p "Here be find word"]]
+       [:div {:class "col-md-4"} [:h2 "Find"] 
+        (form-to [:get "/"]
+         [:div {:class "form-group"}
+          (label {:class "control-label"} "word" "Word")
+          (text-field {:class "form-control"} "word")]
+         [:div {:class "form-group"}
+          (submit-button "Find")])]
        [:div {:class "col-md-4"} "&nbsp;"] 
        [:div {:class "col-md-4"} [:h2 "Add word"] 
         (form-to [:post "/"]
@@ -27,7 +33,7 @@
           (label {:class "control-label"} "english" "English")
           (text-field {:class "form-control"} "english")]
          [:div {:class "form-group"}
-          (submit-button "Submit")])]]
+          (submit-button "Add")])]]
           
       [:div {:class "row"}  content]]]))
            

@@ -12,4 +12,9 @@
 
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
-      (is (= (:status response) 404)))))
+      (is (= (:status response) 404))))
+  
+  (testing "find a word"
+    (let [response (app (mock/request :get "/?word=makan"))]
+          (is (= (:status response 200))))))
+  

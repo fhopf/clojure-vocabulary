@@ -7,7 +7,10 @@
             [ring.util.response :as response]))
 
 (defroutes app-routes
-  (GET "/" [] (templating/body "Clojabulary" (templating/display-list @dictionary)))
+  (GET "/" [word] 
+    (if word           
+      (templating/body "Clojabulary" (templating/display-list (find_word word)))
+      (templating/body "Clojabulary" (templating/display-list @dictionary))))
   (POST "/" [indonesian english] 
     (do 
       (add_word {indonesian english})
